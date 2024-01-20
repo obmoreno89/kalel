@@ -6,6 +6,7 @@ import MessagesSidebar from '../partials/messages/MessagesSidebar';
 import MessagesHeader from '../partials/messages/MessagesHeader';
 import MessagesBody from '../partials/messages/MessagesBody';
 import MessagesFooter from '../partials/messages/MessagesFooter';
+import InformationMessage from '../partials/messages/InformationMessages';
 
 function Messages() {
 	const contentArea = useRef(null);
@@ -21,7 +22,6 @@ function Messages() {
 		<div className='flex h-screen overflow-hidden'>
 			{/* Sidebar */}
 			<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
 			{/* Content area */}
 			<div
 				className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'
@@ -29,9 +29,17 @@ function Messages() {
 			>
 				{/*  Site header */}
 				<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-
 				<main>
 					<div className='relative flex'>
+						<div className='sticky top-16 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-[calc(100vh-64px)]'>
+							<div className='px-5 py-4'>
+								<InformationMessage
+									msgSidebarOpen={msgSidebarOpen}
+									setMsgSidebarOpen={setMsgSidebarOpen}
+								/>
+							</div>
+						</div>
+
 						{/* Messages sidebar */}
 						<MessagesSidebar
 							msgSidebarOpen={msgSidebarOpen}

@@ -6,6 +6,8 @@ import colegioChiapas from '../icons/colegioChiapas.svg';
 import nameKalelBlack from '../icons/nameKalelBlack.svg';
 import nameKalelWhite from '../icons/nameKalelWhite.svg';
 import kalelLogo from '../icons/kalelLogo.svg';
+import messageText from '../icons/messageText.svg';
+import mention from '../icons/mention.svg';
 
 export default {
 	person,
@@ -16,4 +18,6 @@ export default {
 	nameKalelBlack,
 	nameKalelWhite,
 	kalelLogo,
+	messageText,
+	mention,
 };

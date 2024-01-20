@@ -59,6 +59,14 @@ function Messages() {
 							<MessagesBody />
 							<MessagesFooter />
 						</div>
+						<div className='sticky top-16 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-[calc(100vh-64px)]'>
+							<div className='px-5 py-4'>
+								<InformationMessage
+									msgSidebarOpen={msgSidebarOpen}
+									setMsgSidebarOpen={setMsgSidebarOpen}
+								/>
+							</div>
+						</div>
 					</div>
 				</main>
 			</div>

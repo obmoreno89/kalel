@@ -12,6 +12,9 @@ import whatsapp from '../icons/whatsapp.svg';
 import facebook from '../icons/facebook.svg';
 import sms from '../icons/sms.svg';
 import global from '../icons/global.svg';
+import userOctagon from '../icons/userOctagon.svg';
+import arrowInter from '../icons/arrowInter.svg';
+import arrowSent from '../icons/arrowSent.svg';
 
 export default {
 	person,
@@ -28,4 +31,7 @@ export default {
 	facebook,
 	sms,
 	global,
+	userOctagon,
+	arrowInter,
+	arrowSent,
 };

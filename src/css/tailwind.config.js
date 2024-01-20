@@ -11,6 +11,7 @@ module.exports = {
 				hover: '#116361',
 				gray: '#7B7B7B',
 				gray100: '#CED7DF',
+				gray200: '#A5B9CC',
 				black: '#000000',
 				orange: '#FF8A00',
 				aqua: '#09E4CA',

@@ -44,17 +44,16 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
 								</svg>
 							</button>
 						</form>
-						{/* Direct messages */}
-						<DirectMessages
-							msgSidebarOpen={msgSidebarOpen}
-							setMsgSidebarOpen={setMsgSidebarOpen}
-						/>
 						{/* Channels */}
-						<Channels
+						{/* <Channels
 							msgSidebarOpen={msgSidebarOpen}
 							setMsgSidebarOpen={setMsgSidebarOpen}
-						/>
+						/> */}
 					</div>
+					<DirectMessages
+						msgSidebarOpen={msgSidebarOpen}
+						setMsgSidebarOpen={setMsgSidebarOpen}
+					/>
 				</div>
 			</div>
 		</div>

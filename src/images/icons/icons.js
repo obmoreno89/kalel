@@ -8,6 +8,10 @@ import nameKalelWhite from '../icons/nameKalelWhite.svg';
 import kalelLogo from '../icons/kalelLogo.svg';
 import messageText from '../icons/messageText.svg';
 import mention from '../icons/mention.svg';
+import whatsapp from '../icons/whatsapp.svg';
+import facebook from '../icons/facebook.svg';
+import sms from '../icons/sms.svg';
+import global from '../icons/global.svg';
 
 export default {
 	person,
@@ -20,4 +24,8 @@ export default {
 	kalelLogo,
 	messageText,
 	mention,
+	whatsapp,
+	facebook,
+	sms,
+	global,
 };

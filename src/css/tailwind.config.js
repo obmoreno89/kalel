@@ -10,7 +10,10 @@ module.exports = {
 				third: '#839DE2',
 				hover: '#116361',
 				gray: '#7B7B7B',
+				gray100: '#CED7DF',
 				black: '#000000',
+				orange: '#FF8A00',
+				aqua: '#09E4CA',
 			},
 			boxShadow: {
 				DEFAULT:
@@ -23,7 +26,7 @@ module.exports = {
 				blue: '2px solid rgba(0, 112, 244, 0.5)',
 			},
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
+				inter: ['Raleway', 'sans-serif'],
 			},
 			fontSize: {
 				xs: ['0.75rem', { lineHeight: '1.5' }],

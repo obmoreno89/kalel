@@ -15,23 +15,35 @@ import global from '../icons/global.svg';
 import userOctagon from '../icons/userOctagon.svg';
 import arrowInter from '../icons/arrowInter.svg';
 import arrowSent from '../icons/arrowSent.svg';
+import arrowRight from '../icons/arrowRight.svg';
+import documentNormal from '../icons/documentNormal.svg';
+import phone from '../icons/phone.svg';
+import location from '../icons/location.svg';
+import pencilBlue from '../icons/pencilBlue.svg';
+import trash from '../icons/trash.svg';
 
 export default {
-	person,
-	syncronik,
-	nidec,
-	hubmine,
-	colegioChiapas,
-	nameKalelBlack,
-	nameKalelWhite,
-	kalelLogo,
-	messageText,
-	mention,
-	whatsapp,
-	facebook,
-	sms,
-	global,
-	userOctagon,
-	arrowInter,
-	arrowSent,
+  person,
+  syncronik,
+  nidec,
+  hubmine,
+  colegioChiapas,
+  nameKalelBlack,
+  nameKalelWhite,
+  kalelLogo,
+  messageText,
+  mention,
+  whatsapp,
+  facebook,
+  sms,
+  global,
+  userOctagon,
+  arrowInter,
+  arrowSent,
+  arrowRight,
+  documentNormal,
+  phone,
+  location,
+  pencilBlue,
+  trash,
 };

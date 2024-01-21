@@ -32,7 +32,7 @@ function Messages() {
         {/* <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
         <main>
           <div className='relative flex'>
-            <div className='sticky bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-screen'>
+            <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-screen'>
               <div className='px-5 py-4'>
                 <InformationMessage
                   msgSidebarOpen={msgSidebarOpen}
@@ -46,7 +46,6 @@ function Messages() {
               msgSidebarOpen={msgSidebarOpen}
               setMsgSidebarOpen={setMsgSidebarOpen}
             />
-
             {/* Messages body */}
             <div
               className={`grow flex flex-col md:translate-x-0 transform transition-transform duration-300 ease-in-out ${
@@ -57,14 +56,18 @@ function Messages() {
                 msgSidebarOpen={msgSidebarOpen}
                 setMsgSidebarOpen={setMsgSidebarOpen}
               />
-              <MessagesBody />
-              <MessagesFooter />
-            </div>
-            <div className='sticky top-16 bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-[calc(100vh-64px)]'>
-              <ChatProfileInformation
-                msgSidebarOpen={msgSidebarOpen}
-                setMsgSidebarOpen={setMsgSidebarOpen}
-              />
+              <div className='flex'>
+                <div>
+                  <MessagesBody />
+                  <MessagesFooter />
+                </div>
+                <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-60 xl:w-64 h-[calc(100vh-64px)]'>
+                  <ChatProfileInformation
+                    msgSidebarOpen={msgSidebarOpen}
+                    setMsgSidebarOpen={setMsgSidebarOpen}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </main>

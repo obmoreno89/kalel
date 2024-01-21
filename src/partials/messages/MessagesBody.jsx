@@ -8,7 +8,7 @@ function MessagesBody() {
   return (
     <div className='grow px-4 sm:px-6 md:px-5 py-6 overflow-y-auto max-h-[650px]'>
       {/* Chat msg */}
-      <div className='flex items-start mb-4 last:mb-0 mt-16'>
+      <div className='flex items-start mb-4 last:mb-0'>
         <img
           className='rounded-full mr-4'
           src={User02}

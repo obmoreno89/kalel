@@ -18,7 +18,16 @@ export default function AccordionConversationsInformation(props) {
           style={{ width: '20px', height: '20px' }}
         />
       </button>
-      <div className={`text-sm ${!open && 'hidden'}`}>{props.children}</div>
+      <div className='px-2 flex flex-col gap-2'>
+        <article className={`${!open && 'hidden'}`}>
+          <h5 className='text-black font font-semibold'>Iniciada el</h5>
+          <p className='text-sm'>Lunes 3 de Abril a las 11:15 AM</p>
+        </article>
+        <article className={`${!open && 'hidden'}`}>
+          <h5 className='text-black font font-semibold'>Origen</h5>
+          <p className='text-sm'>WhatsApp (Orgánico)</p>
+        </article>
+      </div>
     </div>
   );
 }

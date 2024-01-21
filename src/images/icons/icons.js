@@ -21,6 +21,8 @@ import phone from '../icons/phone.svg';
 import location from '../icons/location.svg';
 import pencilBlue from '../icons/pencilBlue.svg';
 import trash from '../icons/trash.svg';
+import minus from '../icons/minus.svg';
+import plus from '../icons/plus.svg';
 
 export default {
   person,
@@ -46,4 +48,6 @@ export default {
   location,
   pencilBlue,
   trash,
+  minus,
+  plus,
 };

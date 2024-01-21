@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
-export default function AccordionAgent(props) {
+export default function AccordionTeam(props) {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
       <div className='flex justify-between'>
-        <h5 className='text-black font-semibold'>Agente asignado</h5>
-        <button className='text-xs text-primary font-semibold'>
+        <h5 className='text-black font-semibold'>Equipo asignado</h5>
+        {/* <button className='text-xs text-primary font-semibold'>
           Asignarme
-        </button>
+        </button> */}
       </div>
       <div className=' mt-2 px-3 py-1 rounded-lg border border-slate-200'>
         <button
@@ -21,7 +21,7 @@ export default function AccordionAgent(props) {
             <h5 className='text-primary w-10 h-10 rounded-full bg-secondary flex justify-center items-center'>
               {props.title}
             </h5>
-            <p>Marcus Dantus</p>
+            <p>#Finanzas</p>
           </div>
           <svg
             className={`w-8 h-8 shrink-0 fill-current text-slate-400 group-hover:text-slate-500 ml-3 ${

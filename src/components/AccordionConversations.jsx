@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import icons from '../images/icons/icons';
 import AccordionAgent from './AccordionAgent';
+import AccordionTeam from './AccordionTeam';
 
 function AccordionConversation(props) {
   const [open, setOpen] = useState(false);
@@ -21,6 +22,9 @@ function AccordionConversation(props) {
       </button>
       <div className={`text-sm mt-5 px-2 ${!open && 'hidden'}`}>
         <AccordionAgent title='MD'>hola</AccordionAgent>
+      </div>
+      <div className={`text-sm mt-5 px-2 ${!open && 'hidden'}`}>
+        <AccordionTeam title='f'>hola</AccordionTeam>
       </div>
     </div>
   );

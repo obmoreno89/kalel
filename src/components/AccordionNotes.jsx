@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import icons from '../images/icons/icons';
 
-export default function AccordionConversationsInformation(props) {
+export default function AccordionNotes(props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -18,15 +18,18 @@ export default function AccordionConversationsInformation(props) {
           style={{ width: '20px', height: '20px' }}
         />
       </button>
-      <div className='px-2 flex flex-col gap-2 text-sm'>
-        <article className={`${!open && 'hidden'}`}>
-          <h5 className='text-black font font-semibold'>Iniciada el</h5>
-          <p className='text-sm'>Lunes 3 de Abril a las 11:15 AM</p>
-        </article>
-        <article className={`${!open && 'hidden'}`}>
-          <h5 className='text-black font font-semibold'>Origen</h5>
-          <p className='text-sm'>WhatsApp (Orgánico)</p>
-        </article>
+      <div className={`px-2 flex flex-col gap-2 ${!open && 'hidden'}`}>
+        <div className='bg-note p-5 flex flex-col mt-3 mb-5'>
+          <p className='text-sm'>
+            Jhon reportó su pago pero se encuentra pendiente. Vamos a darle
+            seguimiento con el ticket #30031339
+          </p>
+          <div>
+            <p className='text-xs'>
+              Creada por Marcus (Yo) <br /> Abril 3, 11:21 AM
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

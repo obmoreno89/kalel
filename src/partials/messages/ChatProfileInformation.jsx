@@ -11,20 +11,20 @@ function ChatProfileInformation() {
           <img className='rounded-full' src={UserImage01} alt='foto' />
           <img className='cursor-pointer' src={icons.arrowRight} alt='icono' />
         </div>
-        <h5 className='mt-4 text-2xl font-bold'>Jhon Doe</h5>
+        <h5 className='mt-4 font-bold text-2xl'>Jhon Doe</h5>
         <ul className='flex flex-col gap-2'>
           <li className='flex gap-1'>
-            <img className='w-5' src={icons.sms} alt='icono' />
+            <img className='' src={icons.sms} alt='icono' />
             <p>jhon_doe@acme.inc</p>
-            <img className='w-5' src={icons.documentNormal} alt='icono' />
+            <img className='' src={icons.documentNormal} alt='icono' />
           </li>
           <li className='flex gap-1'>
-            <img className='w-5' src={icons.phone} alt='icono' />
+            <img className='' src={icons.phone} alt='icono' />
             <p>+529371303699</p>
-            <img className='w-5' src={icons.documentNormal} alt='icono' />
+            <img className='' src={icons.documentNormal} alt='icono' />
           </li>
           <li className='flex gap-1'>
-            <img className='w-5' src={icons.location} alt='icono' />
+            <img className='' src={icons.location} alt='icono' />
             <p>Monterrey, NL MX</p>
           </li>
         </ul>
@@ -37,6 +37,7 @@ function ChatProfileInformation() {
           </button>
         </div>
       </div>
+
       <section className='mt-6'>
         <ConversationActions />
       </section>

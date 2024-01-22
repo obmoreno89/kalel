@@ -7,9 +7,9 @@ import icons from '../../images/icons/icons';
 function MessagesHeader({ msgSidebarOpen, setMsgSidebarOpen }) {
   return (
     <div>
-      <div className='flex items-center justify-between bg-white border-b border-slate-200 px-4 sm:px-6 md:px-5 h-20'>
+      <div className='flex items-center justify-between bg-white border-b border-slate-200 px-4 sm:px-6 md:px-5 h-16'>
         <div className='flex gap-2 items-center'>
-          <img className='rounded-full' src={User01} alt='foto' />
+          <img className='rounded-full w-12' src={User01} alt='foto' />
           <div>
             <p className='text-xl font-bold text-black'>Jhon Doe</p>
             <div className='flex gap-1'>

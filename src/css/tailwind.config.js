@@ -18,6 +18,7 @@ module.exports = {
         note: '#FDF5DF',
         blue100: '#6DB3F9',
         green: '#74D06B',
+        blackSide: '#1E1E1E',
       },
       boxShadow: {
         DEFAULT:

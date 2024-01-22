@@ -24,6 +24,14 @@ import trash from '../icons/trash.svg';
 import minus from '../icons/minus.svg';
 import plus from '../icons/plus.svg';
 import arrowDown from '../icons/arrowDown.svg';
+import messageTextSideBar from '../icons/messageTextSideBar.svg';
+import userSquare from '../icons/userSquare.svg';
+import diagram from '../icons/diagram.svg';
+import ticket from '../icons/ticket.svg';
+import send from '../icons/send.svg';
+import taskSquare from '../icons/taskSquare.svg';
+import link from '../icons/link.svg';
+import setting from '../icons/setting.svg';
 
 export default {
   person,
@@ -52,4 +60,12 @@ export default {
   minus,
   plus,
   arrowDown,
+  messageTextSideBar,
+  userSquare,
+  diagram,
+  ticket,
+  send,
+  taskSquare,
+  link,
+  setting,
 };

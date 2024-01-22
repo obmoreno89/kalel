@@ -16,6 +16,8 @@ module.exports = {
         orange: '#FF8A00',
         aqua: '#09E4CA',
         note: '#FDF5DF',
+        blue100: '#6DB3F9',
+        green: '#74D06B',
       },
       boxShadow: {
         DEFAULT:

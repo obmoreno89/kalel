@@ -23,6 +23,7 @@ import pencilBlue from '../icons/pencilBlue.svg';
 import trash from '../icons/trash.svg';
 import minus from '../icons/minus.svg';
 import plus from '../icons/plus.svg';
+import arrowDown from '../icons/arrowDown.svg';
 
 export default {
   person,
@@ -50,4 +51,5 @@ export default {
   trash,
   minus,
   plus,
+  arrowDown,
 };

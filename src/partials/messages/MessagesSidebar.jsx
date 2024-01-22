@@ -15,7 +15,7 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
         {/* #Marketing group */}
         <div>
           <div className='px-5 py-4'>
-            <h5 className='mb-3 text-black font-bold text-lg'>
+            <h5 className='mb-3 text-black font-bold text-xl'>
               Conversaciones
             </h5>
             {/* Search form */}

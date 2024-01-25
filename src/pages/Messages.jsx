@@ -28,16 +28,11 @@ function Messages() {
         className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'
         ref={contentArea}
       >
-        {/*  Site header */}
-        {/* <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> */}
         <main>
           <div className='relative flex'>
             <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-screen'>
-              <div className='px-5 py-4'>
-                <InformationMessage
-                  msgSidebarOpen={msgSidebarOpen}
-                  setMsgSidebarOpen={setMsgSidebarOpen}
-                />
+              <div className='px-3 py-4'>
+                <InformationMessage />
               </div>
             </div>
 

@@ -4,7 +4,7 @@ import icons from '../../images/icons/icons';
 function InformationMessages() {
   return (
     <div className=''>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-2'>
         <div className='flex items-center gap-1 bg-secondary p-2 rounded-lg'>
           <img src={icons.messageText} alt='icono mensaje' />
           <h5 className='text-sm text-primary font-semibold cursor-pointer'>
@@ -24,7 +24,9 @@ function InformationMessages() {
             <li className='font-semibold'>#ventas</li>
             <li className='font-semibold'>#tecnología</li>
             <li className='font-semibold'>#finanzas</li>
-            <button className='text-gray100'>+ Crear grupo</button>
+            <button className='text-gray100 font-semibold'>
+              + Crear grupo
+            </button>
           </ul>
         </div>
         <div className='mt-2'>
@@ -54,7 +56,7 @@ function InformationMessages() {
               </div>
               <span>Sitio web (tryblond.com)</span>
             </li>
-            <button className='text-gray100 text-left'>
+            <button className='text-gray100 text-left font-semibold'>
               + Agregar bandeja
             </button>
           </ul>
@@ -71,7 +73,9 @@ function InformationMessages() {
               <span>Cliente vips</span>
             </li>
 
-            <button className='text-gray100 text-left'>+ Crear etiqueta</button>
+            <button className='text-gray100 text-left font-semibold'>
+              + Crear etiqueta
+            </button>
           </ul>
         </div>
       </div>

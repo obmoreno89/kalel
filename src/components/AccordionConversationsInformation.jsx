@@ -7,7 +7,7 @@ export default function AccordionConversationsInformation(props) {
   return (
     <div className=''>
       <button
-        className='flex items-center justify-between w-full group mb-1 bg-secondary px-2 py-3'
+        className='flex items-center justify-between w-full group mb-1 bg-secondary px-5 py-3'
         aria-expanded={open}
         onClick={() => setOpen(!open)}
       >

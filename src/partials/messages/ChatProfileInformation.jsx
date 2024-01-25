@@ -3,18 +3,29 @@ import icons from '../../images/icons/icons';
 import UserImage01 from '../../images/user-32-01.jpg';
 import ConversationActions from './conversationActions';
 
-function ChatProfileInformation() {
+function ChatProfileInformation({
+  sidebarOpenInformation,
+  informationSidebarOpen,
+}) {
+  const handleClicksidebarInformation = () =>
+    sidebarOpenInformation(!informationSidebarOpen);
+
   return (
     <div>
       <div className='px-5 py-4'>
         <div className='flex items-start justify-between'>
           <img className='rounded-full' src={UserImage01} alt='foto' />
-          <img className='cursor-pointer' src={icons.arrowRight} alt='icono' />
+          <img
+            onClick={handleClicksidebarInformation}
+            className='cursor-pointer'
+            src={icons.arrowRight}
+            alt='icono'
+          />
         </div>
-        <h5 className='mt-4 font-bold text-2xl'>Jhon Doe</h5>
-        <ul className='flex flex-col gap-2'>
+        <h5 className='mt-4 font-bold text-lg'>Jhon Doe</h5>
+        <ul className='flex flex-col gap-2 text-sm'>
           <li className='flex gap-1'>
-            <img className='' src={icons.sms} alt='icono' />
+            <img className='' src={icons.smsGray} alt='icono' />
             <p>jhon_doe@acme.inc</p>
             <img className='' src={icons.documentNormal} alt='icono' />
           </li>

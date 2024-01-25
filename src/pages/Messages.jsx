@@ -14,10 +14,13 @@ function Messages() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [msgSidebarOpen, setMsgSidebarOpen] = useState(true);
+  const [informationSidebarOpen, setInformationSideBarOpen] = useState(false);
 
   useEffect(() => {
     contentArea.current.scrollTop = 99999999;
   }, [msgSidebarOpen]); // automatically scroll the chat and make the most recent message visible
+
+  const sidebarOpenInformation = (value) => setInformationSideBarOpen(value);
 
   return (
     <div className='flex h-screen overflow-hidden'>
@@ -48,20 +51,22 @@ function Messages() {
               }`}
             >
               <MessagesHeader
-                msgSidebarOpen={msgSidebarOpen}
-                setMsgSidebarOpen={setMsgSidebarOpen}
+                sidebarOpenInformation={sidebarOpenInformation}
+                informationSidebarOpen={informationSidebarOpen}
               />
               <div className='flex'>
                 <div>
                   <MessagesBody />
                   <MessagesFooter />
                 </div>
-                <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-60 xl:w-64 h-[calc(100vh-64px)]'>
-                  <ChatProfileInformation
-                    msgSidebarOpen={msgSidebarOpen}
-                    setMsgSidebarOpen={setMsgSidebarOpen}
-                  />
-                </div>
+                {informationSidebarOpen && (
+                  <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-64 xl:w-72 h-[calc(100vh-64px)]'>
+                    <ChatProfileInformation
+                      sidebarOpenInformation={sidebarOpenInformation}
+                      informationSidebarOpen={informationSidebarOpen}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

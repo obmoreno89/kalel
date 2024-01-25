@@ -11,6 +11,7 @@ import mention from '../icons/mention.svg';
 import whatsapp from '../icons/whatsapp.svg';
 import facebook from '../icons/facebook.svg';
 import sms from '../icons/sms.svg';
+import smsGray from '../icons/smsGray.svg';
 import global from '../icons/global.svg';
 import userOctagon from '../icons/userOctagon.svg';
 import arrowInter from '../icons/arrowInter.svg';
@@ -68,4 +69,5 @@ export default {
   taskSquare,
   link,
   setting,
+  smsGray,
 };

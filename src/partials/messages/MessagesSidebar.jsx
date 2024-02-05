@@ -11,7 +11,7 @@ function MessagesSidebar({ msgSidebarOpen, setMsgSidebarOpen }) {
         msgSidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <div className='sticky bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80 h-screen'>
+      <div className='sticky bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-72 xl:w-80'>
         {/* #Marketing group */}
         <div>
           <div className='px-3 py-4'>

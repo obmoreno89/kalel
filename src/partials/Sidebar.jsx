@@ -270,7 +270,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div>
           <div className=''>
             <li
-              className={`px-3 py-3 rounded-lg mb-0.5 mt-24 last:mb-0 list-none ${
+              className={`px-3 py-3 rounded-lg mb-0.5  mt-14 last:mb-0 list-none ${
                 pathname.includes('setting') && 'bg-primary'
               }`}
             >

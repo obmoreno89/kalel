@@ -28,23 +28,26 @@ function Messages() {
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       {/* Content area */}
       <div
-        className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'
+        className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden '
         ref={contentArea}
       >
         <main>
           <div className='relative flex'>
-            <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 h-screen'>
+            <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 '>
               <div className='px-3 py-4'>
                 <InformationMessage />
               </div>
             </div>
 
-            {/* Messages sidebar */}
-            <MessagesSidebar
-              msgSidebarOpen={msgSidebarOpen}
-              setMsgSidebarOpen={setMsgSidebarOpen}
-            />
-            {/* Messages body */}
+            <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200'>
+              <div className='py-4'>
+                <MessagesSidebar
+                  msgSidebarOpen={msgSidebarOpen}
+                  setMsgSidebarOpen={setMsgSidebarOpen}
+                />
+              </div>
+            </div>
+
             <div
               className={`grow flex flex-col md:translate-x-0 transform transition-transform duration-300 ease-in-out ${
                 msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'
@@ -60,7 +63,7 @@ function Messages() {
                   <MessagesFooter />
                 </div>
                 {informationSidebarOpen && (
-                  <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-64 xl:w-72 h-[calc(100vh-64px)]'>
+                  <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-64 xl:w-72'>
                     <ChatProfileInformation
                       sidebarOpenInformation={sidebarOpenInformation}
                       informationSidebarOpen={informationSidebarOpen}

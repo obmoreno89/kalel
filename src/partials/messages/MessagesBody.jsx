@@ -6,7 +6,7 @@ import ChatImage from '../../images/chat-image.jpg';
 
 function MessagesBody() {
   return (
-    <div className='grow px-4 sm:px-6 md:px-5 py-6 overflow-y-auto max-h-[650px]'>
+    <div className='grow px-4 sm:px-6 md:px-5 py-6 overflow-y-auto h-screen'>
       {/* Chat msg */}
       <div className='flex items-start mb-4 last:mb-0'>
         <img

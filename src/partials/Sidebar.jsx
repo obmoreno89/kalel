@@ -66,7 +66,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       <div
         id='sidebar'
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-blackSide p-4 transition-all duration-200 ease-in-out ${
+        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-20 shrink-0 bg-blackSide p-4 transition-all duration-200 ease-in-out ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-64'
         }`}
       >
@@ -106,7 +106,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className='space-y-8'>
           {/* Pages group */}
           <div>
-            <ul className='mt-3 space-y-4'>
+            <ul className='mt-3 space-y-4 2xl:space-y-12'>
               {/* Messages */}
               <li
                 className={`px-3 py-3 rounded-lg mb-0.5 last:mb-0 ${

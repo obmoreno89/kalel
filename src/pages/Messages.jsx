@@ -49,7 +49,7 @@ function Messages() {
             </div>
 
             <div
-              className={`grow flex flex-col md:translate-x-0 transform transition-transform duration-300 ease-in-out ${
+              className={`grow h-full flex-col md:translate-x-0 transform transition-transform duration-300 ease-in-out ${
                 msgSidebarOpen ? 'translate-x-1/3' : 'translate-x-0'
               }`}
             >
@@ -58,12 +58,12 @@ function Messages() {
                 informationSidebarOpen={informationSidebarOpen}
               />
               <div className='flex'>
-                <div>
+                <div className='flex-1'>
                   <MessagesBody />
                   <MessagesFooter />
                 </div>
                 {informationSidebarOpen && (
-                  <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-64 xl:w-72'>
+                  <div className='bg-white border-l border-slate-200 overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 md:w-64 xl:w-72 '>
                     <ChatProfileInformation
                       sidebarOpenInformation={sidebarOpenInformation}
                       informationSidebarOpen={informationSidebarOpen}

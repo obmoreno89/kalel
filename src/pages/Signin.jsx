@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import icons from '../images/icons/icons.js';
 import imagesPNG from '../images/images-png/imagesPNG.js';
-import AuthImage from '../images/auth-image.jpg';
+import { useForm } from 'react-hook-form';
 
 function Signin() {
   const [eye, setEye] = useState(false);
@@ -10,6 +10,13 @@ function Signin() {
   const toggleEye = () => {
     setEye((prevState) => !prevState);
   };
+
+  const submit = (data) => console.log(data);
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
   return (
     <main className='bg-white'>
@@ -34,7 +41,7 @@ function Signin() {
                 </h1>
               </div>
               {/* Form */}
-              <form className='w-11/12'>
+              <form className='w-11/12' onSubmit={handleSubmit(submit)}>
                 <div className='space-y-4'>
                   <div>
                     <label
@@ -44,10 +51,26 @@ function Signin() {
                       Correo electrónico
                     </label>
                     <input
+                      autoComplete='off'
                       id='email'
                       className='form-input w-full'
                       type='email'
+                      {...register('email', {
+                        required: {
+                          value: true,
+                          message: 'El campo es requerido',
+                        },
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                          message: 'El formato no es correcto',
+                        },
+                      })}
                     />
+                    {errors.email && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.email.message}
+                      </span>
+                    )}
                   </div>
                   <div className='relative'>
                     <label
@@ -127,12 +150,18 @@ function Signin() {
                     </Link>
                   </div>
                 </div>
-                <Link
+                {/* <Link
                   className='btn bg-primary text-white w-full mt-5 h-[45px]'
                   to='/'
                 >
                   Iniciar sesión
-                </Link>
+                </Link> */}
+                <button
+                  className='btn bg-primary text-white w-full mt-5 h-[45px]'
+                  type='submit'
+                >
+                  Iniciar sesión
+                </button>
               </form>
               {/* Footer */}
               <div className='pt-5 mt-6'>

@@ -16,9 +16,9 @@ function Messages() {
   const [msgSidebarOpen, setMsgSidebarOpen] = useState(true);
   const [informationSidebarOpen, setInformationSideBarOpen] = useState(false);
 
-  useEffect(() => {
-    contentArea.current.scrollTop = 99999999;
-  }, [msgSidebarOpen]); // automatically scroll the chat and make the most recent message visible
+  // useEffect(() => {
+  //   contentArea.current.scrollTop = 99999999;
+  // }, [msgSidebarOpen]); // automatically scroll the chat and make the most recent message visible
 
   const sidebarOpenInformation = (value) => setInformationSideBarOpen(value);
 

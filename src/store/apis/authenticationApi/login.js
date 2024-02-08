@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const api = 'https://apisandbox.kalel.mx';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export const loginApi = createApi({
   reducerPath: 'loginApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: api,
+    baseUrl: apiUrl,
   }),
   endpoints: (builder) => ({
     postLogin: builder.mutation({

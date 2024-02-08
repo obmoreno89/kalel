@@ -1,22 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import icons from '../images/icons/icons.js';
 import imagesPNG from '../images/images-png/imagesPNG.js';
 import { useForm } from 'react-hook-form';
+import { usePostLoginMutation } from '../store/apis/authenticationApi/login.js';
+import { encryptData } from '../utils/cryptoUtils.js';
+import LoadingButton from '../components/loadingButton.jsx';
 
 function Signin() {
   const [eye, setEye] = useState(false);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('User') !== null) {
+      // localStorage.removeItem('User');
+    }
+  }, []);
 
   const toggleEye = () => {
     setEye((prevState) => !prevState);
   };
 
-  const submit = (data) => console.log(data);
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
+
+  const [postCredentials, { isLoading, isError }] = usePostLoginMutation();
+
+  const handleLogin = async (data) => {
+    try {
+      const response = await postCredentials(data);
+      const user = {
+        token: response.data.user.token,
+        name: response.data.user.first_name,
+        logged: true,
+      };
+      const encryptedUser = encryptData(user);
+      const localStorageUser = JSON.stringify(encryptedUser);
+      localStorage.setItem('User', localStorageUser);
+      navigate('/messages');
+    } catch (error) {}
+  };
 
   return (
     <main className='bg-white'>
@@ -41,7 +68,7 @@ function Signin() {
                 </h1>
               </div>
               {/* Form */}
-              <form className='w-11/12' onSubmit={handleSubmit(submit)}>
+              <form className='w-11/12' onSubmit={handleSubmit(handleLogin)}>
                 <div className='space-y-4'>
                   <div>
                     <label
@@ -83,8 +110,19 @@ function Signin() {
                       id='password'
                       className='form-input w-full'
                       type={eye ? 'text' : 'password'}
-                      autoComplete='on'
+                      autoComplete='off'
+                      {...register('password', {
+                        required: {
+                          value: true,
+                          message: 'El campo es requerido',
+                        },
+                      })}
                     />
+                    {errors.password && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.password.message}
+                      </span>
+                    )}
                     <button
                       onClick={toggleEye}
                       type='button'
@@ -156,27 +194,35 @@ function Signin() {
                 >
                   Iniciar sesión
                 </Link> */}
-                <button
-                  className='btn bg-primary text-white w-full mt-5 h-[45px]'
-                  type='submit'
-                >
-                  Iniciar sesión
-                </button>
+                {!isLoading ? (
+                  <button
+                    className='btn bg-primary text-white w-full mt-5'
+                    type='submit'
+                  >
+                    Iniciar sesión
+                  </button>
+                ) : (
+                  <div className='w-full mt-5 h-[45px]'>
+                    <LoadingButton />
+                  </div>
+                )}
               </form>
               {/* Footer */}
               <div className='pt-5 mt-6'>
                 {/* Warning */}
-                <div className='mt-5 w-11/12'>
-                  <div className='bg-red-200 text-red-600 px-3 py-2 rounded'>
-                    <svg
-                      className='inline w-3 h-3 shrink-0 fill-current mr-2'
-                      viewBox='0 0 12 12'
-                    >
-                      <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
-                    </svg>
-                    <span className='text-sm'>Credenciales invalidas</span>
+                {isError && (
+                  <div className='mt-5 w-11/12'>
+                    <div className='bg-red-200 text-red-600 px-3 py-2 rounded'>
+                      <svg
+                        className='inline w-3 h-3 shrink-0 fill-current mr-2'
+                        viewBox='0 0 12 12'
+                      >
+                        <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
+                      </svg>
+                      <span className='text-sm'>Credenciales invalidas</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className='mt-3 flex justify-center w-11/12'>
                 <p className='text-black font-bold text-sm'>

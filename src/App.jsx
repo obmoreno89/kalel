@@ -24,38 +24,64 @@ import BadgePage from './pages/component/BadgePage';
 
 import TooltipPage from './pages/component/TooltipPage';
 
+//PRIVATE AND PUBLIC ROUTES
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
+
 function App() {
-	const location = useLocation();
+  const location = useLocation();
 
-	useEffect(() => {
-		document.querySelector('html').style.scrollBehavior = 'auto';
-		window.scroll({ top: 0 });
-		document.querySelector('html').style.scrollBehavior = '';
-	}, [location.pathname]); // triggered on route change
+  useEffect(() => {
+    document.querySelector('html').style.scrollBehavior = 'auto';
+    window.scroll({ top: 0 });
+    document.querySelector('html').style.scrollBehavior = '';
+  }, [location.pathname]); // triggered on route change
 
-	return (
-		<>
-			<Routes>
-				{/* Dashboard */}
-				<Route exact path='/' element={<Dashboard />} />
-				<Route path='/messages' element={<Messages />} />
-				{/* Auth */}
-				<Route path='/signin' element={<Signin />} />
-				<Route path='/signup' element={<Signup />} />
-				<Route path='/reset-password' element={<ResetPassword />} />
+  return (
+    <>
+      <Routes>
+        {/* Dashboard */}
+        <Route
+          exact
+          path='/'
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/messages'
+          element={
+            <PrivateRoute>
+              <Messages />
+            </PrivateRoute>
+          }
+        />
+        {/* Auth */}
+        <Route
+          path='/signin'
+          element={
+            <PublicRoute>
+              <Signin />
+            </PublicRoute>
+          }
+        />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/reset-password' element={<ResetPassword />} />
 
-				{/* Vista previa de Componentes */}
-				<Route path='/component/form' element={<FormPage />} />
-				<Route path='/component/dropdown' element={<DropdownPage />} />
-				<Route path='/component/alert' element={<AlertPage />} />
-				<Route path='/component/modal' element={<ModalPage />} />
-				<Route path='/component/tabs' element={<TabsPage />} />
-				<Route path='/component/badge' element={<BadgePage />} />
-				<Route path='/component/tooltip' element={<TooltipPage />} />
-				<Route path='*' element={<PageNotFound />} />
-			</Routes>
-		</>
-	);
+        {/* Vista previa de Componentes */}
+        <Route path='/component/form' element={<FormPage />} />
+        <Route path='/component/dropdown' element={<DropdownPage />} />
+        <Route path='/component/alert' element={<AlertPage />} />
+        <Route path='/component/modal' element={<ModalPage />} />
+        <Route path='/component/tabs' element={<TabsPage />} />
+        <Route path='/component/badge' element={<BadgePage />} />
+        <Route path='/component/tooltip' element={<TooltipPage />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

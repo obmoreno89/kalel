@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const api = 'https://api.kalel.mx';
+const api = 'https://apisandbox.kalel.mx';
 
 export const loginApi = createApi({
   reducerPath: 'loginApi',

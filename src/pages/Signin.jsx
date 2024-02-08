@@ -14,7 +14,7 @@ function Signin() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem('User') !== null) {
-      // localStorage.removeItem('User');
+      localStorage.removeItem('User');
     }
   }, []);
 

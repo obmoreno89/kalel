@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Transition from '../utils/Transition';
 import { decryptData } from '../utils/cryptoUtils';
+import { usePostLogoutMutation } from '../store/apis/authenticationApi/logoutApi.js';
 
 import UserAvatar from '../images/user-36-03.jpg';
 
@@ -10,6 +12,27 @@ function DropdownProfile({ align }) {
   const [user, setUser] = useState({});
   const trigger = useRef(null);
   const dropdown = useRef(null);
+  const navigate = useNavigate();
+
+  const [postLogout, { error }] = usePostLogoutMutation();
+
+  const handleLogut = async (credentials) => {
+    const token = credentials.token;
+    const logged = credentials.logged;
+    const userToken = {
+      token: token,
+    };
+
+    try {
+      const response = await postLogout(userToken);
+      if (response && logged) {
+        localStorage.removeItem('User');
+        navigate('/signin');
+      }
+    } catch (error) {
+      if (error && logged) localStorage.removeItem('User');
+    }
+  };
 
   // close on click outside
   useEffect(() => {
@@ -106,13 +129,16 @@ function DropdownProfile({ align }) {
               </Link>
             </li>
             <li>
-              <Link
+              <button
                 className='font-medium text-sm text-black-500 hover:text-primary flex items-center py-1 px-3'
-                to='/signin'
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                type='button'
+                onClick={() => {
+                  setDropdownOpen(!dropdownOpen);
+                  handleLogut(user);
+                }}
               >
                 Cerrar sesión
-              </Link>
+              </button>
             </li>
           </ul>
         </div>

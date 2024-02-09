@@ -27,10 +27,12 @@ function Messages() {
       {/* Sidebar */}
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       {/* Content area */}
+
       <div
         className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden '
         ref={contentArea}
       >
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <main>
           <div className='relative flex'>
             <div className='bg-white overflow-x-hidden overflow-y-auto no-scrollbar shrink-0 border-r border-slate-200 md:w-60 xl:w-64 '>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import icons from '../images/icons/icons.js';
 import imagesPNG from '../images/images-png/imagesPNG.js';
 import { useForm } from 'react-hook-form';
-import { usePostLoginMutation } from '../store/apis/authenticationApi/login.js';
+import { usePostLoginMutation } from '../store/apis/authenticationApi/loginApi.js';
 import { encryptData } from '../utils/cryptoUtils.js';
 import LoadingButton from '../components/loadingButton.jsx';
 
